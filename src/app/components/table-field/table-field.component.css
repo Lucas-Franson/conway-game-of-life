@@ -1,0 +1,4 @@
+table tr td.cell {
+    border: 1px solid #000;
+    cursor: pointer;
+}

@@ -1,0 +1,31 @@
+
+
+<!-- <table #field style="border: 1px solid black"></table> -->
+<div class="container">
+    <div class="field-table">
+        <app-table-field [cells]="cells"></app-table-field>
+    </div>
+    <div class="actions">
+        <div class="form-size">
+            <form [formGroup]="size">
+                <mat-form-field>
+                    <mat-label>Size</mat-label>
+                    <input matInput type="number" formControlName="xsize">
+                </mat-form-field>
+                X
+                <mat-form-field>
+                    <mat-label>Size</mat-label>
+                    <input matInput type="number" formControlName="ysize">
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="start-store-btn">
+            <button mat-flat-button (click)="onStart()">{{ running ? "Stop" : "Start" }}</button>
+            <button mat-stroked-button (click)="draw()">Resize</button>
+            <button mat-stroked-button (click)="onStore()" [disabled]="running">Store</button>
+        </div>
+        <div class="history-table">
+            <app-history-table (onChangeCells)="changeCells($event)"></app-history-table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+
+
+<table #field style="border: 1px solid black">
+    <tr *ngFor="let lin of cells; index as i;">
+        <td 
+            *ngFor="let col of lin; index as j;" 
+            [class]="col == 0 ? 'cell empty' : 'cell filled'"
+            (click)="onClick(i, j)"></td>
+    </tr>
+</table>
